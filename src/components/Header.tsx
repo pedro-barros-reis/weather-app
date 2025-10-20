@@ -9,7 +9,7 @@ import { useTheme } from "../app/contexts/ThemeContexts";
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
   return (
-    <header className="bg-secondary w-full border-b">
+    <header className="bg-background w-full border-b">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-4 lg:px-4">
         <a href="" className="flex items-center gap-2">
           <Cloud size={26} />

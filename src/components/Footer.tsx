@@ -2,8 +2,8 @@ import { Cloud } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer id="about" className="bg-secondary border-border border-t">
-      <div className="container mx-auto px-8 py-12 sm:px-6 lg:px-4">
+    <footer id="about" className="bg-background border-border border-t">
+      <div className="container mx-auto px-8 py-8 sm:px-6 lg:px-4">
         <div className="mx-auto max-w-3xl">
           <div className="mb-4 flex items-center gap-2">
             <Cloud className="text-foreground h-6 w-6" />
@@ -13,7 +13,7 @@ const Footer = () => {
           </div>
           <div className="text-muted-foreground space-y-4">
             <p>
-              O Weather App é uma ferramenta que permite consultar o clima em
+              O Weather App é uma ferramenta informativa que permite consultar o clima em
               tempo real de qualquer cidade do mundo.
             </p>
             <p>
@@ -35,7 +35,7 @@ const Footer = () => {
               href="http://linkedin.com/in/pedro-barros-reis/"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-black"
+              className="transition-all ease-in hover:text-primary hover:font-semibold"
             >
               Pedro Barros Reis
             </a>
