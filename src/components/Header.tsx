@@ -4,7 +4,7 @@ import { Cloud, Moon, Sun } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-import { useTheme } from "../contexts/ThemeContexts";
+import { useTheme } from "../app/contexts/ThemeContexts";
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
@@ -12,7 +12,7 @@ const Header = () => {
     <header className="bg-secondary w-full border-b">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-4 lg:px-4">
         <a href="" className="flex items-center gap-2">
-          <Cloud size={26}/>
+          <Cloud size={26} />
           <h1 className="text-2xl font-bold">Weather</h1>
         </a>
 
