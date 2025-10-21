@@ -1,6 +1,11 @@
 import { CloudRain, Droplets, Eye, Gauge, Sun, Wind } from "lucide-react";
 import Image from "next/image";
 
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { iWeather } from "@/interfaces/weather-interface";
 
 import { Card, CardContent } from "./ui/card";
@@ -11,14 +16,14 @@ interface WeatherInfosProps {
 
 const WeatherInfos = ({ data }: WeatherInfosProps) => {
   const { location, current } = data;
-  const date = new Date(location.localtime.replace(' ', 'T'));
+  const date = new Date(location.localtime.replace(" ", "T"));
   const currentDate = new Intl.DateTimeFormat("pt-BR", {
     day: "2-digit",
     month: "2-digit",
     year: "numeric",
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: false
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
   }).format(date);
 
   const detailCards = [
@@ -26,31 +31,37 @@ const WeatherInfos = ({ data }: WeatherInfosProps) => {
       icon: Wind,
       label: "Vento",
       value: `${current.wind_kph} km/h`,
+      description: `A velocidade do vento em ${location.name} é de ${current.wind_kph} km/h`,
     },
     {
       icon: Droplets,
       label: "Umidade",
       value: `${current.humidity}%`,
+      description: `A umidade em ${location.name} é de ${current.humidity}%`,
     },
     {
       icon: Gauge,
       label: "Pressão",
       value: `${current.pressure_mb} mb`,
+      description: `A pressão atmosférica em ${location.name} é de ${current.pressure_mb} milibares`,
     },
     {
       icon: Eye,
       label: "Visibilidade",
       value: `${current.vis_km} km`,
+      description: `A visibilidade horizontal em ${location.name} é de ${current.vis_km} km`,
     },
     {
       icon: Sun,
       label: "Índice UV",
       value: current.uv.toString(),
+      description: `O Índice Ultravioleta em ${location.name} é de ${current.uv.toString()} na escala numérica internacional`,
     },
     {
       icon: CloudRain,
       label: "Precipitação",
       value: `${current.precip_mm} mm`,
+      description: `O volume de precipitação prevista em ${location.name} é de ${current.precip_mm} mm`,
     },
   ];
 
@@ -92,17 +103,24 @@ const WeatherInfos = ({ data }: WeatherInfosProps) => {
         {detailCards.map((detail) => {
           const Icon = detail.icon;
           return (
-            <Card key={detail.label}>
-              <CardContent className="pt-6">
-                <div className="flex flex-col items-center gap-2 text-center">
-                  <Icon className="text-primary h-8 w-8" />
-                  <p className="text-muted-foreground text-sm">
-                    {detail.label}
-                  </p>
-                  <p className="text-xl font-semibold">{detail.value}</p>
-                </div>
-              </CardContent>
-            </Card>
+            <Popover key={detail.label}>
+              <PopoverTrigger asChild>
+                <Card className="hover:border-primary/50 cursor-pointer transition-all ease-in hover:border-2">
+                  <CardContent className="pt-6">
+                    <div className="flex flex-col items-center gap-2 text-center">
+                      <Icon className="text-primary h-8 w-8" />
+                      <p className="text-muted-foreground text-sm">
+                        {detail.label}
+                      </p>
+                      <p className="text-xl font-semibold">{detail.value}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </PopoverTrigger>
+              <PopoverContent className="w-auto max-w-[250px] sm:max-w-xs">
+                <p className="text-sm">{detail.description}</p>
+              </PopoverContent>
+            </Popover>
           );
         })}
         {/* FIM DOS CARDS */}
