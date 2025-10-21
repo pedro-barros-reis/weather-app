@@ -102,3 +102,15 @@ Você pode acessá-la através do link disponível na descrição principal dest
 -----
 
 Desenvolvido por **Pedro Barros Reis** 👋
+<table>
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/93685196?v=4" width="100px;" alt="Pedro Barros Reis"/><br>
+        <sub>
+          <b>Pedro Barros Reis</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
