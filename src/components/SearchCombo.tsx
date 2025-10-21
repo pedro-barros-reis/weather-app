@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { Check, ChevronsUpDown, Loader2 } from "lucide-react";
@@ -78,7 +79,10 @@ export function SearchCombo({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className={cn("h-11 w-full justify-between text-base font-normal", className)}
+          className={cn(
+            "h-11 w-full justify-between text-base font-normal",
+            className,
+          )}
         >
           {selectedValue || "Selecione uma cidade..."}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
