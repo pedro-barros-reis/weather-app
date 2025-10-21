@@ -93,6 +93,12 @@ pnpm dev
 
 Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver a aplicação funcionando.
 
+
+## 5\. 🌐 Deploy na Vercel
+
+Uma versão *live* deste projeto está publicada na Vercel para demonstração.
+
+Você pode acessá-la através do link disponível na descrição principal deste repositório no GitHub.
 -----
 
 Desenvolvido por **Pedro Barros Reis** 👋
