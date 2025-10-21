@@ -13,8 +13,8 @@ const Footer = () => {
           </div>
           <div className="text-muted-foreground space-y-4">
             <p>
-              O Weather App é uma ferramenta informativa que permite consultar o clima em
-              tempo real de qualquer cidade do mundo.
+              O Weather App é uma ferramenta informativa que permite consultar o
+              clima em tempo real de qualquer cidade do mundo.
             </p>
             <p>
               Utilizamos a API do Weather API para fornecer em tempo real os
@@ -29,13 +29,12 @@ const Footer = () => {
         </div>
         <div className="border-border mt-8 border-t pt-8 text-center">
           <p className="text-muted-foreground text-sm">
-            © 2025 Weather App. Todos os direitos
-            reservados. Desenvolvido por{" "}
+            © 2025 Weather App. Todos os direitos reservados. Desenvolvido por{" "}
             <a
               href="http://linkedin.com/in/pedro-barros-reis/"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-all ease-in hover:text-primary hover:font-semibold"
+              className="hover:text-primary transition-all ease-in hover:font-semibold"
             >
               Pedro Barros Reis
             </a>
